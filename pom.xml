@@ -42,6 +42,7 @@
     <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
     <project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
     <project.build.outputTimestamp>${git.commit.time}</project.build.outputTimestamp>
+    <!--    <project.build.outputTimestamp>2023-07-15T16:16:00Z</project.build.outputTimestamp> -->
     <implementation.build>${git.commit.id.describe}; ${project.build.outputTimestamp}</implementation.build>
 
     <min.maven.version>3.8.8</min.maven.version>
@@ -88,12 +89,12 @@
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>3.5.0</version>
         </plugin>
-        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin -->
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.3.1</version>
-        </plugin>
+        </plugin> -->
         <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-site-plugin -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -109,13 +110,6 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.4.5</version>
         </plugin>
-
-        <!-- Get info from commit to set outputTimestamp to the last commit date/time -->
-        <plugin>
-          <groupId>io.github.git-commit-id</groupId>
-          <artifactId>git-commit-id-maven-plugin</artifactId>
-          <version>6.0.0</version>
-        </plugin>
       </plugins>
     </pluginManagement>
 
@@ -124,6 +118,7 @@
       <plugin>
         <groupId>io.github.git-commit-id</groupId>
         <artifactId>git-commit-id-maven-plugin</artifactId>
+        <version>6.0.0</version>
         <configuration>
           <dateFormat>yyyy-MM-dd'T'HH:mm:ssXXX</dateFormat>
           <failOnNoGitDirectory>false</failOnNoGitDirectory>
