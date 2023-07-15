@@ -39,7 +39,7 @@ As can be seen in the `pom.xml` file, I've also defined the `implementation.buil
 <implementation.build>${git.commit.id.describe}; ${project.build.outputTimestamp}</implementation.build>
 ```
 
-Inspecting the manifest int the resulting jar file shows that the git commit values have been properly interpolated:
+Inspecting the `MANIFEST.MF` file in the resulting jar file shows that the git commit values have been properly interpolated:
 
 ```agsl
 Manifest-Version: 1.0
